@@ -105,7 +105,7 @@ public class Test_Auto extends OpMode {
     public void autonomousPathUpdate() {
         switch (pathState) {
             case 0:
-//                robot.tiltArm(45,0.8);
+                robot.tiltArm(45,0.8);
                 follower.followPath(firstPath);
                 setPathState(-1);
                 break;
