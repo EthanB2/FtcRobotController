@@ -10,6 +10,7 @@ import com.pedropathing.pathgen.Point;
 import com.pedropathing.util.Timer;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import org.firstinspires.ftc.teamcode.pedroPathing.robot.Assembly;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.constants.FConstants;
 import org.firstinspires.ftc.teamcode.pedroPathing.constants.LConstants;
@@ -34,7 +35,7 @@ public class Test_Auto extends OpMode {
 
     /** This is the variable where we store the state of our auto.
      * It is used by the pathUpdate method. */
-    private int pathState;
+    private int pathState = 0;
 
 
 
@@ -46,6 +47,7 @@ public class Test_Auto extends OpMode {
     /* These are our Paths and PathChains that we will define in buildPaths() */
     private Path firstPath;
  //   private PathChain grabPickup1, grabPickup2, grabPickup3, scorePickup1, scorePickup2, scorePickup3;
+ private Assembly assembly;
 
     /** Build the paths for the auto (adds, for example, constant/linear headings while doing paths)
      * It is necessary to do this so that all the paths are built before the auto starts. **/
@@ -105,7 +107,7 @@ public class Test_Auto extends OpMode {
     public void autonomousPathUpdate() {
         switch (pathState) {
             case 0:
-                robot.tiltArm(45,0.8);
+                
                 follower.followPath(firstPath);
                 setPathState(-1);
                 break;
