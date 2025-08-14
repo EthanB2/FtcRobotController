@@ -107,7 +107,7 @@ public class Test_Auto extends OpMode {
     public void autonomousPathUpdate() {
         switch (pathState) {
             case 0:
-                
+
                 follower.followPath(firstPath);
                 setPathState(-1);
                 break;
